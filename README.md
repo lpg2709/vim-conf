@@ -5,7 +5,7 @@
 Download and create .vimrc
 
 ```sh
-curl -fLo ~/.vimrc https://raw.githubusercontent.com/lpg2709/My-vim-config/.vimrc
+curl -fLo ~/.vimrc https://raw.githubusercontent.com/lpg2709/My-vim-config/master/.vimrc
 ```
 
 Create the undodir into .vim
