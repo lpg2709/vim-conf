@@ -12,8 +12,8 @@ set undodir=~/.vim/undodir          " Arquivo de undo armazenados nessa pasta
 set undofile                        " Para cada arquivo
 set incsearch                       " Destaca a busaca no texto
 
-set colorcolumn=80                  " Habilita uma linha inndicativa de 80 chars, comando qua define a cor a baixo
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+" set colorcolumn=80                  " Habilita uma linha inndicativa de 80 chars, comando qua define a cor a baixo
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
 call plug#begin('~/.vim/plugged')   " Inicio da chamada do plugin maneger 
