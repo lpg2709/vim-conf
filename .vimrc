@@ -33,7 +33,7 @@ colorscheme gruvbox                 " Seleciona o tema
 set background=dark                 " bg color
 
 
-map <C-b> :NERDTreeToggle<CR>       " Show file tree
+map <C-k><C-b> :NERDTreeToggle<CR>       " Show file tree
 
 map <C-h> :wincmd h<CR>             " Mover para a proxima janela
 map <C-l> :wincmd l<CR>             " Janela anterior
