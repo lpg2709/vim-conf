@@ -30,6 +30,7 @@ Plug 'vim-utils/vim-man'            " man page vim
 
 call plug#end()                     " Fim da chamada
 
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox                 " Seleciona o tema 
 set background=dark                 " bg color
 
