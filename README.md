@@ -1,5 +1,9 @@
 # My personal vim configuration
 
+Require:
+- [git](https://git-scm.com/download/linux)
+- [vim-plug](https://github.com/junegunn/vim-plug)
+
 ## Install
 
 Download and create .vimrc
