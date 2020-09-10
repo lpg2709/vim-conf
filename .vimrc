@@ -3,6 +3,7 @@ syntax on                           " Mantem sintax ligado
 set noerrorbells                    " Remove som de erros
 set tabstop=4	                    " Espaco de tab igual a 4
 set number	                        " Numero nas linhas
+set norelativenumber                " Linhas relativas
 set smartindent                     " Tenta deixar a indentacao correta
 set nowrap                          " Linha continua
 set smartcase                       " Case sensitivi para busacas i
@@ -27,9 +28,11 @@ Plug 'w0rp/ale'                     " Verificacao de sintax
 Plug 'morhetz/gruvbox'              " Theme grovbox
 Plug 'jremmen/vim-ripgrep'          " grep search de forma rapida
 Plug 'vim-utils/vim-man'            " man page vim
+Plug 'luochen1990/rainbow'          " showing diff level of parentheses in diff color
 
 call plug#end()                     " Fim da chamada
 
+let g:rainbow_active = 1            " set to 0 if you want to enable it later via :RainbowToggle
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox                 " Seleciona o tema 
 set background=dark                 " bg color
@@ -39,6 +42,7 @@ map <C-b> :NERDTreeToggle<CR>       " Show file tree
 
 map <C-h> :wincmd h<CR>             " Mover para a proxima janela
 map <C-l> :wincmd l<CR>             " Janela anterior
+nmap <C-l><C-l> :set invrelativenumber <CR> " Ctrl-l duas vezes, ativa e desativa linha relativa ao cursor
 
 "---------------------------------- COC Configs ----------------------------------
 
