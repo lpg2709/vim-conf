@@ -6,23 +6,12 @@ Require:
 
 ## Install
 
-Download and create .vimrc
+Just copy and paste this command:
 
 ```sh
-curl -fLo ~/.vimrc https://raw.githubusercontent.com/lpg2709/My-vim-config/master/.vimrc
+bash -c  "$(wget -qO- https://git.io/JTsDa)"
 ```
-
-Create the undodir into .vim
-
-```sh
-mkdir ~/.vim/undodir -p
-```
-
-Install the plugins
-
-```sh
-vim ~/.vimrc 
-```
+and press ENTER.
 
 Into vim: 
 
