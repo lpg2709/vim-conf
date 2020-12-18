@@ -1,7 +1,8 @@
 syntax on                           " Mantem sintax ligado
 
 set noerrorbells                    " Remove som de erros
-set tabstop=4	                    " Espaco de tab igual a 4
+set tabstop=4	                  " Espaco de tab igual a 4
+set shiftwidth=4
 set number	                        " Numero nas linhas
 set norelativenumber                " Linhas relativas
 set smartindent                     " Tenta deixar a indentacao correta
@@ -13,7 +14,7 @@ set undodir=~/.vim/undodir          " Arquivo de undo armazenados nessa pasta
 set undofile                        " Para cada arquivo
 set incsearch                       " Destaca a busaca no texto
 
-" set colorcolumn=80                  " Habilita uma linha inndicativa de 80 chars, comando qua define a cor a baixo
+" set colorcolumn=80                " Habilita uma linha inndicativa de 80 chars, comando qua define a cor a baixo
 " highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 
