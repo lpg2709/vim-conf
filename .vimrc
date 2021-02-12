@@ -13,6 +13,8 @@ set nobackup                        " Remove arquivo de backou
 set undodir=~/.vim/undodir          " Arquivo de undo armazenados nessa pasta
 set undofile                        " Para cada arquivo
 set incsearch                       " Destaca a busaca no texto
+set pastetoggle=<F2>                " Ativa e desativo modo copia
+command! Xs :mks! | :xa             " Save the session, save modified files, and exit
 
 " set colorcolumn=80                " Habilita uma linha inndicativa de 80 chars, comando qua define a cor a baixo
 " highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -43,7 +45,7 @@ map <silent> <C-b> :NERDTreeToggle<CR>       " Show file tree
 
 map <silent> <C-h> :wincmd h<CR>             " Mover para a proxima janela
 map <silent> <C-l> :wincmd l<CR>             " Janela anterior
-nmap <silent> <C-l><C-l> :set invrelativenumber <CR> " Ctrl-l duas vezes, ativa e desativa linha relativa ao cursor
+nmap <silent> <C-R><C-R> :set invrelativenumber <CR> " Ctrl-l duas vezes, ativa e desativa linha relativa ao cursor
 
 "---------------------------------- COC Configs ----------------------------------
 
