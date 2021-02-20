@@ -45,7 +45,7 @@ map <silent> <C-b> :NERDTreeToggle<CR>       " Show file tree
 
 map <silent> <C-h> :wincmd h<CR>             " Mover para a proxima janela
 map <silent> <C-l> :wincmd l<CR>             " Janela anterior
-nmap <silent> <C-R><C-R> :set invrelativenumber <CR> " Ctrl-l duas vezes, ativa e desativa linha relativa ao cursor
+nmap <silent> <C-k><C-k> :set invrelativenumber <CR> " Ctrl-l duas vezes, ativa e desativa linha relativa ao cursor
 
 "---------------------------------- COC Configs ----------------------------------
 
