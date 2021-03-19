@@ -45,7 +45,14 @@ map <silent> <C-b> :NERDTreeToggle<CR>       " Show file tree
 
 map <silent> <C-h> :wincmd h<CR>             " Mover para a proxima janela
 map <silent> <C-l> :wincmd l<CR>             " Janela anterior
-nmap <silent> <C-k><C-k> :set invrelativenumber <CR> " Ctrl-l duas vezes, ativa e desativa linha relativa ao cursor
+nmap <silent> <C-k><C-k> :set invrelativenumber <CR> " Ctrl-k duas vezes, ativa e desativa linha relativa ao cursor
+"------------------------------- Abreviations ------------------------------------
+
+iabbrev t_link <link rel="stylesheet" type="text/css" href="%"><Esc>F%s<c-o>:call getchar()<CR>
+iabbrev t_script <script type="text/javascript" src="%"></script><Esc>F%s<c-o>:call getchar()<CR>
+iabbrev t_html <ESC><F2>i<!DOCTYPE html><CR><html lang="en"><CR><head><CR><TAB><meta charset="UTF-8"><CR><TAB><meta http-equiv="X-UA-Compatible" content="IE=edge"><CR><TAB><meta name="viewport" content="width=device-width, initial-scale=1.0"><CR><TAB><title>%</title><CR></head><CR><body><CR><CR><CR></body><CR></html><c-o>6k<c-o>A<ESC>F%s<c-o>:call getchar()<CR><ESC><F2>
+iabbrev *{ <ESC><F2>i*{<CR><TAB>margin: 0;<CR><TAB>padding: 0;<CR><TAB>box-sizing: border-box;<CR>}<ESC><F2>i
+iabbrev log@ console.log(%);<ESC>F%s<c-o>:call getchar()<CR>
 
 "---------------------------------- COC Configs ----------------------------------
 
