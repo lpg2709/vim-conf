@@ -17,9 +17,9 @@ Into vim:
 
 > :PlugInstall
 
-## Using YouCompleteMe
+## ~Using YouCompleteMe~
 
-Install the plugin YouCompleteMe.
+~Install the plugin YouCompleteMe.~
 
 ```sh
 cd ~/.vim/plugged/YouCompleteMe
@@ -41,5 +41,5 @@ sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-10 100
 ```
 
 Into vim:
-> :CocInstall coc-tsserver coc-python coc-json coc-html coc-css coc-clangd coc-markdownlint
+> :CocInstall coc-tsserver coc-python coc-json coc-css coc-clangd coc-markdownlint coc-vetur coc-rls
 
