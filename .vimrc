@@ -1,9 +1,9 @@
 syntax on                           " Mantem sintax ligado
 
 set noerrorbells                    " Remove som de erros
-set tabstop=2	                  " Espaco de tab igual a 4
+set tabstop=2                       " Espaco de tab igual a 4
 set shiftwidth=2
-set number	                        " Numero nas linhas
+set number                          " Numero nas linhas
 set norelativenumber                " Linhas relativas
 set smartindent                     " Tenta deixar a indentacao correta
 set nowrap                          " Linha continua
@@ -26,7 +26,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete and more
 Plug 'mattn/emmet-vim'              " Emmet para o vim
 Plug 'scrooloose/nerdtree'          " File tree 
 Plug 'terryma/vim-multiple-cursors' " Multiplos cursors
-Plug 'w0rp/ale'                     " Verificacao de sintax
+Plug 'w0rp/ale'                     " Integrador de linters
 " Plug 'ycm-core/YouCompleteMe'       " Auto compleat
 Plug 'morhetz/gruvbox'              " Theme grovbox
 Plug 'jremmen/vim-ripgrep'          " grep search de forma rapida
@@ -43,12 +43,18 @@ set background=dark                 " bg color
 
 map <silent> <C-b> :NERDTreeToggle<CR>       " Show file tree
 
-map <silent> <C-h> :wincmd h<CR>             " Mover para a proxima janela
-map <silent> <C-l> :wincmd l<CR>             " Janela anterior
+map <silent> <C-h> :wincmd h<CR>             " move para o buffer da esquerda
+map <silent> <C-l> :wincmd l<CR>             " move para o buffer da direita
 nmap <silent> <C-k><C-k> :set invrelativenumber <CR> " Ctrl-k duas vezes, ativa e desativa linha relativa ao cursor
 
 " Comment Box
 nnoremap <leader>* I*<Space><Esc>A<Space>*<ESC>I<ESC><C-V>$U<Esc>yy2P<C-V>$r*i/<ESC>jI<SPACE><ESC>j<C-V>$r*A/<ESC>I<SPACE><c-o>o<c-o>I
+
+" Remove sapces
+augroup DEFAULT_FILES
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+augroup END
 
 "------------------------------- Abreviations ------------------------------------
 
