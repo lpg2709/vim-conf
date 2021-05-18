@@ -1,8 +1,9 @@
 syntax on                           " Mantem sintax ligado
 
 set noerrorbells                    " Remove som de erros
-set tabstop=2                       " Espaco de tab igual a 4
-set shiftwidth=2
+set tabstop=4                       " Espaco de tab igual a 4
+set shiftwidth=4
+set scrolloff=8                     " Scroll ofset, 8 lines
 set number                          " Numero nas linhas
 set norelativenumber                " Linhas relativas
 set smartindent                     " Tenta deixar a indentacao correta
