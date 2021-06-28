@@ -2,7 +2,7 @@ syntax on                           " Mantem sintax ligado
 
 set noerrorbells                    " Remove som de erros
 set tabstop=4                       " Espaco de tab igual a 4
-set shiftwidth=4
+set shiftwidth=4                    " Tab de 4 espacos para > e <
 set scrolloff=8                     " Scroll ofset, 8 lines
 set number                          " Numero nas linhas
 set norelativenumber                " Linhas relativas
@@ -20,12 +20,11 @@ command! Xs :mks! | :xa             " Save the session, save modified files, and
 " set colorcolumn=80                " Habilita uma linha inndicativa de 80 chars, comando qua define a cor a baixo
 " highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-
-call plug#begin('~/.vim/plugged')   " Inicio da chamada do plugin maneger 
+call plug#begin('~/.vim/plugged')   " Inicio da chamada do plugin maneger
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete and more
 Plug 'mattn/emmet-vim'              " Emmet para o vim
-Plug 'scrooloose/nerdtree'          " File tree 
+Plug 'scrooloose/nerdtree'          " File tree
 Plug 'terryma/vim-multiple-cursors' " Multiplos cursors
 Plug 'w0rp/ale'                     " Integrador de linters
 " Plug 'ycm-core/YouCompleteMe'       " Auto compleat
@@ -38,7 +37,7 @@ call plug#end()                     " Fim da chamada
 
 let g:rainbow_active = 1            " set to 0 if you want to enable it later via :RainbowToggle
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox                 " Seleciona o tema 
+colorscheme gruvbox                 " Seleciona o tema
 set background=dark                 " bg color
 
 
@@ -56,6 +55,13 @@ augroup DEFAULT_FILES
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
 augroup END
+
+autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
+
+function ReloadSyntax()
+  syntax sync fromstart
+  echom "Syntax reloaded!"
+endfunction
 
 "------------------------------- Abreviations ------------------------------------
 
@@ -188,4 +194,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
