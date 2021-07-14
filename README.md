@@ -9,7 +9,7 @@ Require:
 Just copy and paste this command:
 
 ```sh
-bash -c  "$(wget -qO- https://git.io/lpg2709-vim-config)"
+bash -c  "$(wget -qO- https://git.io/JCbTi)"
 ```
 and press ENTER.
 
