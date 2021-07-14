@@ -9,11 +9,11 @@ Require:
 Just copy and paste this command:
 
 ```sh
-bash -c  "$(wget -qO- https://git.io/JTsDa)"
+bash -c  "$(wget -qO- https://git.io/lpg2709-vim-config)"
 ```
 and press ENTER.
 
-Into vim: 
+Into vim:
 
 > :PlugInstall
 
