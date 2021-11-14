@@ -57,8 +57,5 @@ check_execution "exit"
 
 printc "\nCreating .vim/undodir\n" "i"
 mkdir ~/.vim/undodir -p
-
-vim ~/.vimrc
-
 printc "Finished ...\n" "s"
 
