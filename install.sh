@@ -46,16 +46,16 @@ function check_execution(){
 printc "\nInstalling vim-plug ..." "i"
 printc "\nExecuting curl" "i"
 # Install https://github.com/junegunn/vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -s > /dev/null
+curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -s > /dev/null
 check_execution "exit"
 
 printc "\nCopy .vimrc to $HOME/.vimrc ..." "i"
 printc "\nExecuting curl" "i"
 # Copy My-vim-config from git to .vimrc
-curl -fLo ~/.vimrc https://raw.githubusercontent.com/lpg2709/vim-config/master/.vimrc -s > /dev/null
+curl -fLo "$HOME/.vimrc" https://raw.githubusercontent.com/lpg2709/vim-config/master/.vimrc -s > /dev/null
 check_execution "exit"
 
 printc "\nCreating .vim/undodir\n" "i"
-mkdir ~/.vim/undodir -p
+mkdir "$HOME/.vim/undodir" -p
 printc "Finished ...\n" "s"
 
