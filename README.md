@@ -3,6 +3,7 @@
 Require:
 - [git](https://git-scm.com/download/linux)
 - [vim-plug](https://github.com/junegunn/vim-plug)
+- [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
 ## Install
 
