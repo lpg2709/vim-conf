@@ -1,3 +1,4 @@
+"----------------------------- Native Config ---------------------------------
 syntax on                                            " Highlight on
 
 set noerrorbells                                     " No error sound
@@ -18,13 +19,15 @@ set incsearch                                        " Highlight search
 set pastetoggle=<F2>                                 " F2 toggle paste mode
 command! Xs :mks! | :xa                              " Save the session,
                                                      "   modified files and exit
-
 " set colorcolumn=80                                   " Indicative 80 char line
 highlight ColorColumn ctermbg=0 guibg=lightgrey      " Color of 80 char line
 
+"----------------------------- Pluggins Load ---------------------------------
 call plug#begin('~/.vim/plugged')                    " Start plugin maneger
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}      " Auto complete and more
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fzf for vim
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'                               " Emmet for vim
 Plug 'scrooloose/nerdtree'                           " File tree
 Plug 'terryma/vim-multiple-cursors'                  " Multi cursor
@@ -42,6 +45,7 @@ Plug 'vim-airline/vim-airline-themes'                " Themes for vim-airline
 
 call plug#end()                                      " Fim da chamada
 
+"------------------------------ Theme config ---------------------------------
 " set to 0 if you want to enable it later via :RainbowToggle
 let g:rainbow_active = 1
 " Set gruvbox dark to airline
@@ -54,7 +58,7 @@ set background=dark
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 
-
+"------------------------------ Keys remaps ----------------------------------
 " Show file tree
 map <silent> <C-b> :NERDTreeToggle<CR>
 
@@ -69,27 +73,29 @@ nmap <silent> <C-k><C-k> :set invrelativenumber <CR>
 nnoremap <leader>* I*<Space><Esc>A<Space>*<ESC>I<ESC><C-V>$U<Esc>yy2P<C-V>
 	\ $r*i/<ESC>jI<SPACE><ESC>j<C-V>$r*A/<ESC>I<SPACE><c-o>o<c-o>I
 
+"---------------------------- Auto commnds  ----------------------------------
+autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
+
+"------------------------------ Functions  -----------------------------------
 " Remove sapces
 augroup DEFAULT_FILES
 	autocmd!
 	autocmd BufWritePre * %s/\s\+$//e
 augroup END
 
-autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
-
+" Reload Syntax highlight
 function ReloadSyntax()
 	syntax sync fromstart
 	echom "Syntax reloaded!"
 endfunction
 
-" Set column
+" Set column [Key bind: \+c]
 function! SetColumns()
 	:execute "set colorcolumn=" . (&colorcolumn == "" ? "80" : "")
 endfunction
 nnoremap <silent> <leader>c :call SetColumns() <CR>
 
 "----------------------------- Abreviations ----------------------------------
-
 iabbrev t_link <link rel="stylesheet" type="text/css" href="%"><Esc>F%s<c-o>
 	\ :call getchar()<CR>
 iabbrev t_script <script type="text/javascript" src="%"></script><Esc>F%s<c-o>
@@ -103,6 +109,23 @@ iabbrev t_html <ESC><F2>i<!DOCTYPE html><CR><html lang="en"><CR><head><CR><TAB>
 iabbrev *{ <ESC><F2>i*{<CR><TAB>margin: 0;<CR><TAB>padding: 0;<CR><TAB>
 	\ box-sizing: border-box;<CR>}<ESC><F2>i
 iabbrev log@ console.log(%);<ESC>F%s<c-o>:call getchar()<CR>
+
+"-------------------------------- FZF Configs --------------------------------
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+let g:fzf_colors =
+			\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Normal'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 "-------------------------------- COC Configs --------------------------------
 
@@ -233,4 +256,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
