@@ -5,6 +5,9 @@ Require:
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 
+Optional:
+- [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+
 ## Install
 
 Just copy and paste this command:
