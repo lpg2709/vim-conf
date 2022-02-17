@@ -30,6 +30,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fzf for vim
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'                               " Emmet for vim
 Plug 'scrooloose/nerdtree'                           " File tree
+Plug 'ryanoasis/vim-devicons'                        " Icons, use NerdFonts
 Plug 'terryma/vim-multiple-cursors'                  " Multi cursor
 Plug 'w0rp/ale'                                      " Linters integrations
 " Plug 'ycm-core/YouCompleteMe'                        " Auto complete
