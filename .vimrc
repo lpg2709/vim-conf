@@ -36,6 +36,8 @@ Plug 'w0rp/ale'                                      " Linters integrations
 " Plug 'ycm-core/YouCompleteMe'                        " Auto complete
 Plug 'morhetz/gruvbox'                               " Grovbox colorscheme S2
 Plug 'vim-utils/vim-man'                             " man page vim
+Plug 'xolox/vim-notes'                               " Notes for vim
+Plug 'xolox/vim-misc'                                " Notes for vim use it
 Plug 'luochen1990/rainbow'                           " showing diff level of
                                                      "   parentheses in diff
                                                      "   color
@@ -43,6 +45,7 @@ Plug 'jiangmiao/auto-pairs'                          " Insert or delete brackets
                                                      "   parens, quotes in pair.
 Plug 'vim-airline/vim-airline'                       " Improved status bar
 Plug 'vim-airline/vim-airline-themes'                " Themes for vim-airline
+Plug 'puremourning/vimspector'                       " Debug UI for vim
 
 call plug#end()                                      " Fim da chamada
 
@@ -110,6 +113,12 @@ iabbrev t_html <ESC><F2>i<!DOCTYPE html><CR><html lang="en"><CR><head><CR><TAB>
 iabbrev *{ <ESC><F2>i*{<CR><TAB>margin: 0;<CR><TAB>padding: 0;<CR><TAB>
 	\ box-sizing: border-box;<CR>}<ESC><F2>i
 iabbrev log@ console.log(%);<ESC>F%s<c-o>:call getchar()<CR>
+"-------------------------------- Vim Note Configs ---------------------------
+let g:notes_directories = ['~/Documents/Notes']
+let g:notes_suffix = '.md'
+
+"-------------------------------- Vimnspector Configs ------------------------
+let g:vimspector_enable_mappings = 'HUMAN'
 
 "-------------------------------- FZF Configs --------------------------------
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
