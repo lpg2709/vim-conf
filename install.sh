@@ -43,19 +43,26 @@ function check_execution(){
 
 }
 
+USER_NAME="${SUDO_USER:-$USER}"
+USER_HOME="/home/$USER_NAME"
+if [ ! -d "$USER_HOME" ]; then
+	printc "User not found!\n" "e"
+	exit 1
+fi
+
 printc "\nInstalling vim-plug ..." "i"
 printc "\nExecuting curl" "i"
 # Install https://github.com/junegunn/vim-plug
-curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -s > /dev/null
+curl -fLo "$USER_HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -s > /dev/null
 check_execution "exit"
 
-printc "\nCopy .vimrc to $HOME/.vimrc ..." "i"
+printc "\nCopy .vimrc to $USER_HOME/.vimrc ..." "i"
 printc "\nExecuting curl" "i"
 # Copy My-vim-config from git to .vimrc
-curl -fLo "$HOME/.vimrc" https://raw.githubusercontent.com/lpg2709/vim-config/master/.vimrc -s > /dev/null
+curl -fLo "$USER_HOME/.vimrc" https://raw.githubusercontent.com/lpg2709/vim-config/master/.vimrc -s > /dev/null
 check_execution "exit"
 
 printc "\nCreating .vim/undodir\n" "i"
-mkdir "$HOME/.vim/undodir" -p
+mkdir "$USER_HOME/.vim/undodir" -p
 printc "Finished ...\n" "s"
 
