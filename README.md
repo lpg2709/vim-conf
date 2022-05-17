@@ -21,18 +21,6 @@ Into vim:
 
 > :PlugInstall
 
-## ~Using YouCompleteMe~
-
-~Install the plugin YouCompleteMe.~
-
-```sh
-cd ~/.vim/plugged/YouCompleteMe
-
-sudo apt install build-essential cmake vim python3-dev
-
-python3 install.py  --all
-```
-
 ## Using COC
 
 Needed NodeJS. [Install](https://github.com/nvm-sh/nvm)
