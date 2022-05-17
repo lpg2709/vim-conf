@@ -4,6 +4,7 @@ syntax on                                            " Highlight on
 set noerrorbells                                     " No error sound
 set tabstop=4                                        " 1 tab = 4 Spaces
 set shiftwidth=4                                     " 1 tab = 4 Space for << >>
+set encoding=UTF-8                                   " File encode to UTF-8
 set scrolloff=8                                      " Scroll ofset, 8 lines
 set cursorline
 set number                                           " Line numbers
@@ -46,6 +47,7 @@ Plug 'jiangmiao/auto-pairs'                          " Insert or delete brackets
 Plug 'vim-airline/vim-airline'                       " Improved status bar
 Plug 'vim-airline/vim-airline-themes'                " Themes for vim-airline
 Plug 'puremourning/vimspector'                       " Debug UI for vim
+Plug 'editorconfig/editorconfig-vim'                 " Editorsconfig plugint
 
 call plug#end()                                      " Fim da chamada
 
@@ -119,6 +121,12 @@ let g:notes_suffix = '.md'
 
 "-------------------------------- Vimnspector Configs ------------------------
 let g:vimspector_enable_mappings = 'HUMAN'
+
+"-------------------------------- NERDTree Configs ---------------------------
+let NERDTreeShowHidden=1
+
+" Start NERDTree and put the cursor back in the other window.
+" autocmd VimEnter * NERDTree | wincmd p
 
 "-------------------------------- FZF Configs --------------------------------
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
@@ -266,3 +274,11 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+" ------------ After all execute ------------------------------------
+" after a re-source, fix syntax matching issues (concealing brackets):
+autocmd VimEnter * source ~/.vimrc " Reload config on init
+if exists('g:loaded_webdevicons')
+	call webdevicons#refresh()
+endif
