@@ -33,5 +33,7 @@ sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-10 100
 ```
 
 Into vim:
-> :CocInstall coc-tsserver coc-pyright coc-json coc-css coc-clangd coc-markdownlint coc-rls coc-go coc-prettier coc-calc coc-cmake coc-sh
 
+```sh
+CocInstall coc-tsserver coc-pyright coc-json coc-css coc-clangd coc-markdownlint coc-rls coc-go coc-prettier coc-calc coc-cmake coc-sh
+```
