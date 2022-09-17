@@ -1,5 +1,7 @@
 # My personal vim configuration
 
+>Not used anymore, transferred to https://github.com/lpg2709/dotfiles
+
 Require:
 - [git](https://git-scm.com/download/linux)
 - [vim-plug](https://github.com/junegunn/vim-plug)
